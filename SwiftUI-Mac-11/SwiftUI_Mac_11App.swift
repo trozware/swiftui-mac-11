@@ -21,23 +21,24 @@ struct SwiftUI_Mac_11App: App {
                     NSApp.appearance = NSAppearance(named: .darkAqua)
                     appTheme = "dark"
                 }) {
-                    Label("Dark", systemImage: "moon.stars")
-                }
+                    Text("Dark mode").fontWeight(.medium)
+                }.padding(.bottom, 2).padding(.top, 1)
 
                 Button(action: {
                     NSApp.appearance = NSAppearance(named: .aqua)
                     appTheme = "light"
                 }) {
-                    Label("Light", systemImage: "sun.max")
-                }
+                    Text("Light mode").fontWeight(.medium)
+                }.padding(.bottom, 2).padding(.top, 1)
 
                 Button(action: {
                     NSApp.appearance = nil
                     appTheme = "system"
                 }) {
-                    Label("System", systemImage: "desktopcomputer")
-                }
+                    Text("System mode").fontWeight(.medium)
+                }.padding(.bottom, 2).padding(.top, 1)
             }
+
         }
 
 //        Settings {

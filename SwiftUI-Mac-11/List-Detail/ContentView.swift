@@ -91,7 +91,7 @@ struct ListRowView: View {
             Text(code)
                 .font(.largeTitle)
                 .foregroundColor(.primary)
-
+                
             Text(title)
                 .font(.title2)
                 .truncationMode(.tail)

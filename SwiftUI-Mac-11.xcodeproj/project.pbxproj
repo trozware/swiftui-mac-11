@@ -11,6 +11,10 @@
 		26ADC44824AEEC550042ED8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADC44724AEEC550042ED8A /* ContentView.swift */; };
 		26ADC44A24AEEC560042ED8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26ADC44924AEEC560042ED8A /* Assets.xcassets */; };
 		26ADC44D24AEEC560042ED8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26ADC44C24AEEC560042ED8A /* Preview Assets.xcassets */; };
+		26D1053E24AEF8F300897038 /* httpcodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D1053B24AEF8F300897038 /* httpcodes.json */; };
+		26D1053F24AEF8F300897038 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D1053C24AEF8F300897038 /* Helper.swift */; };
+		26D1054024AEF8F300897038 /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D1053D24AEF8F300897038 /* HttpStatus.swift */; };
+		26D1054224AEF93200897038 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D1054124AEF93200897038 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		26ADC44C24AEEC560042ED8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26ADC44E24AEEC560042ED8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26ADC44F24AEEC560042ED8A /* SwiftUI_Mac_11.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI_Mac_11.entitlements; sourceTree = "<group>"; };
+		26D1053B24AEF8F300897038 /* httpcodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = httpcodes.json; sourceTree = "<group>"; };
+		26D1053C24AEF8F300897038 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		26D1053D24AEF8F300897038 /* HttpStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
+		26D1054124AEF93200897038 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,10 @@
 			children = (
 				26ADC44524AEEC550042ED8A /* SwiftUI_Mac_11App.swift */,
 				26ADC44724AEEC550042ED8A /* ContentView.swift */,
+				26D1054124AEF93200897038 /* DetailView.swift */,
+				26D1053C24AEF8F300897038 /* Helper.swift */,
+				26D1053B24AEF8F300897038 /* httpcodes.json */,
+				26D1053D24AEF8F300897038 /* HttpStatus.swift */,
 				26ADC44924AEEC560042ED8A /* Assets.xcassets */,
 				26ADC44E24AEEC560042ED8A /* Info.plist */,
 				26ADC44F24AEEC560042ED8A /* SwiftUI_Mac_11.entitlements */,
@@ -129,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26ADC44D24AEEC560042ED8A /* Preview Assets.xcassets in Resources */,
+				26D1053E24AEF8F300897038 /* httpcodes.json in Resources */,
 				26ADC44A24AEEC560042ED8A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +155,9 @@
 			files = (
 				26ADC44824AEEC550042ED8A /* ContentView.swift in Sources */,
 				26ADC44624AEEC550042ED8A /* SwiftUI_Mac_11App.swift in Sources */,
+				26D1053F24AEF8F300897038 /* Helper.swift in Sources */,
+				26D1054224AEF93200897038 /* DetailView.swift in Sources */,
+				26D1054024AEF8F300897038 /* HttpStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +288,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Mac-11/Preview Content\"";
+				DEVELOPMENT_TEAM = TC28MCLCFA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-Mac-11/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -279,7 +296,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.troz.test1.SwiftUI-Mac-11";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.troz.SwiftUI-Mac-11";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -294,6 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Mac-11/Preview Content\"";
+				DEVELOPMENT_TEAM = TC28MCLCFA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-Mac-11/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,7 +319,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.troz.test1.SwiftUI-Mac-11";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.troz.SwiftUI-Mac-11";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

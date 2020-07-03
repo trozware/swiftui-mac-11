@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2611466424AF2F4000C5CFFF /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2611466324AF2F4000C5CFFF /* DialogsView.swift */; };
+		265E6C5F24AF275B00FDC676 /* SamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E6C5E24AF275B00FDC676 /* SamplesView.swift */; };
+		265E6C6324AF2B7A00FDC676 /* PickerSamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E6C6024AF2B7A00FDC676 /* PickerSamplesView.swift */; };
+		265E6C6424AF2B7A00FDC676 /* SwitchSamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E6C6124AF2B7A00FDC676 /* SwitchSamplesView.swift */; };
+		265E6C6524AF2B7A00FDC676 /* FormSamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E6C6224AF2B7A00FDC676 /* FormSamplesView.swift */; };
 		26ADC44624AEEC550042ED8A /* SwiftUI_Mac_11App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADC44524AEEC550042ED8A /* SwiftUI_Mac_11App.swift */; };
 		26ADC44824AEEC550042ED8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADC44724AEEC550042ED8A /* ContentView.swift */; };
 		26ADC44A24AEEC560042ED8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26ADC44924AEEC560042ED8A /* Assets.xcassets */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2611466324AF2F4000C5CFFF /* DialogsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogsView.swift; sourceTree = "<group>"; };
+		265E6C5E24AF275B00FDC676 /* SamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesView.swift; sourceTree = "<group>"; };
+		265E6C6024AF2B7A00FDC676 /* PickerSamplesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSamplesView.swift; sourceTree = "<group>"; };
+		265E6C6124AF2B7A00FDC676 /* SwitchSamplesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchSamplesView.swift; sourceTree = "<group>"; };
+		265E6C6224AF2B7A00FDC676 /* FormSamplesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSamplesView.swift; sourceTree = "<group>"; };
 		26ADC44224AEEC550042ED8A /* SwiftUI-Mac-11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Mac-11.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26ADC44524AEEC550042ED8A /* SwiftUI_Mac_11App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Mac_11App.swift; sourceTree = "<group>"; };
 		26ADC44724AEEC550042ED8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				26ADC44524AEEC550042ED8A /* SwiftUI_Mac_11App.swift */,
-				26D1054424AEFADC00897038 /* List-Detail */,
+				26D1054424AEFADC00897038 /* Views */,
 				26D1054324AEFAD400897038 /* Data */,
 				26ADC44924AEEC560042ED8A /* Assets.xcassets */,
 				26ADC44E24AEEC560042ED8A /* Info.plist */,
@@ -92,14 +102,19 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		26D1054424AEFADC00897038 /* List-Detail */ = {
+		26D1054424AEFADC00897038 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				26ADC44724AEEC550042ED8A /* ContentView.swift */,
 				26D1054124AEF93200897038 /* DetailView.swift */,
 				26D1054524AF028F00897038 /* SettingsView.swift */,
+				265E6C5E24AF275B00FDC676 /* SamplesView.swift */,
+				265E6C6024AF2B7A00FDC676 /* PickerSamplesView.swift */,
+				265E6C6124AF2B7A00FDC676 /* SwitchSamplesView.swift */,
+				265E6C6224AF2B7A00FDC676 /* FormSamplesView.swift */,
+				2611466324AF2F4000C5CFFF /* DialogsView.swift */,
 			);
-			path = "List-Detail";
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,8 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265E6C6524AF2B7A00FDC676 /* FormSamplesView.swift in Sources */,
+				265E6C6324AF2B7A00FDC676 /* PickerSamplesView.swift in Sources */,
+				265E6C5F24AF275B00FDC676 /* SamplesView.swift in Sources */,
 				26D1054624AF028F00897038 /* SettingsView.swift in Sources */,
 				26ADC44824AEEC550042ED8A /* ContentView.swift in Sources */,
+				2611466424AF2F4000C5CFFF /* DialogsView.swift in Sources */,
+				265E6C6424AF2B7A00FDC676 /* SwitchSamplesView.swift in Sources */,
 				26ADC44624AEEC550042ED8A /* SwiftUI_Mac_11App.swift in Sources */,
 				26D1053F24AEF8F300897038 /* Helper.swift in Sources */,
 				26D1054224AEF93200897038 /* DetailView.swift in Sources */,

@@ -10,7 +10,13 @@ import SwiftUI
 struct ContentView: View {
     @State private var httpSections: [HttpSection] = []
     @State private var selection: Int? = nil
+    @State private var showSamplesSheet = false
+
     @AppStorage("appTheme") var appTheme: String = "system"
+
+    private let openSamplesMenuItemSelected = NotificationCenter.default
+        .publisher(for: .showSamples)
+        .receive(on: RunLoop.main)
 
     var body: some View {
         NavigationView {
@@ -30,9 +36,15 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
         }
+        .sheet(isPresented: $showSamplesSheet) {
+            SamplesView(isVisible: $showSamplesSheet)
+        }
         .onAppear {
             readCodes()
             checkTheme()
+        }
+        .onReceive(openSamplesMenuItemSelected) { _ in
+            showSamplesSheet.toggle()
         }
         .navigationTitle("HTTP Status Codes")
     }

@@ -14,12 +14,12 @@ struct DetailView: View {
     @State private var catImage: NSImage?
     @State private var imageIsFlipped = false
 
-//    private let flipImageMenuItemSelected = NotificationCenter.default
-//        .publisher(for: .flipImage)
-//        .receive(on: RunLoop.main)
-//
-//    private let saveImageUrlSelected = NotificationCenter.default
-//        .publisher(for: .saveImage)
+    private let flipImageMenuItemSelected = NotificationCenter.default
+        .publisher(for: .flipImage)
+        .receive(on: RunLoop.main)
+
+    private let saveImageUrlSelected = NotificationCenter.default
+        .publisher(for: .saveImage)
     
     var body: some View {
         VStack {
@@ -29,37 +29,35 @@ struct DetailView: View {
             Text(httpStatus.title)
                 .font(.title)
             
-            if catImage != nil {
-                CatImageView(catImage: catImage!, imageIsFlipped: imageIsFlipped)
+            if let catImage = catImage{
+                CatImageView(catImage: catImage, imageIsFlipped: imageIsFlipped)
             } else {
                 Spacer()
                 Text("Loading...")
                     .font(.headline)
             }
             Spacer()
-//            DialogsView()
+            DialogsView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
-            self.getCatImage()
+            getCatImage()
         }
         .navigationTitle(httpStatus.title)
 
-//        .onReceive(flipImageMenuItemSelected) { _ in
-//            // DispatchQueue.main.async {
-//                self.imageIsFlipped.toggle()
-//            // }
-//        }
-//        .onReceive(saveImageUrlSelected) { publisher in
-//            if let saveUrl = publisher.object as? URL,
-//                let imageData = self.catImage?.tiffRepresentation {
-//                if let imageRep = NSBitmapImageRep(data: imageData) {
-//                    if let saveData = imageRep.representation(using: .jpeg, properties: [:]) {
-//                        try? saveData.write(to: saveUrl)
-//                    }
-//                }
-//            }
-//        }
+        .onReceive(flipImageMenuItemSelected) { _ in
+            imageIsFlipped.toggle()
+        }
+        .onReceive(saveImageUrlSelected) { publisher in
+            if let saveUrl = publisher.object as? URL,
+                let imageData = catImage?.tiffRepresentation {
+                if let imageRep = NSBitmapImageRep(data: imageData) {
+                    if let saveData = imageRep.representation(using: .jpeg, properties: [:]) {
+                        try? saveData.write(to: saveUrl)
+                    }
+                }
+            }
+        }
     }
     
     func getCatImage() {
@@ -69,7 +67,7 @@ struct DetailView: View {
                 print(error)
             } else if let data = data {
                 DispatchQueue.main.async {
-                    self.catImage = NSImage(data: data)
+                    catImage = NSImage(data: data)
                 }
             }
         }

@@ -22,27 +22,56 @@ struct SwiftUI_Mac_11App: App {
                     appTheme = "dark"
                 }) {
                     Text("Dark mode").fontWeight(.medium)
-                }.padding(.bottom, 2).padding(.top, 1)
+                }.modifier(MenuButtonStyling())
 
                 Button(action: {
                     NSApp.appearance = NSAppearance(named: .aqua)
                     appTheme = "light"
                 }) {
                     Text("Light mode").fontWeight(.medium)
-                }.padding(.bottom, 2).padding(.top, 1)
+                }.modifier(MenuButtonStyling())
 
                 Button(action: {
                     NSApp.appearance = nil
                     appTheme = "system"
                 }) {
                     Text("System mode").fontWeight(.medium)
-                }.padding(.bottom, 2).padding(.top, 1)
+                }.modifier(MenuButtonStyling())
             }
 
+            CommandMenu("Utilities") {
+                Button(action: {
+                    NotificationCenter.default.post(name: .flipImage, object: nil)
+                }) {
+                    Text("Flip Image").fontWeight(.medium)
+                }.modifier(MenuButtonStyling())
+                .keyboardShortcut("i")
+
+                Button(action: {
+                    NotificationCenter.default.post(name: .showSamples, object: nil)
+                }) {
+                    Text("Toggle UI Samples Window").fontWeight(.medium)
+                }.modifier(MenuButtonStyling())
+                .keyboardShortcut("u")
+            }
         }
 
-//        Settings {
-//            SettingsView()
-//        }
+        Settings {
+            SettingsView()
+        }
+    }
+}
+
+extension Notification.Name {
+    static let flipImage = Notification.Name("flip_image")
+    static let saveImage = Notification.Name("save_image")
+    static let showSamples = Notification.Name("show_samples")
+}
+
+struct MenuButtonStyling: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(.bottom, 2)
+            .padding(.top, 1)
     }
 }

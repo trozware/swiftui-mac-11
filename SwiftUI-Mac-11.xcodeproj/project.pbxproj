@@ -62,11 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				26ADC44524AEEC550042ED8A /* SwiftUI_Mac_11App.swift */,
-				26ADC44724AEEC550042ED8A /* ContentView.swift */,
-				26D1054124AEF93200897038 /* DetailView.swift */,
-				26D1053C24AEF8F300897038 /* Helper.swift */,
-				26D1053B24AEF8F300897038 /* httpcodes.json */,
-				26D1053D24AEF8F300897038 /* HttpStatus.swift */,
+				26D1054424AEFADC00897038 /* List-Detail */,
+				26D1054324AEFAD400897038 /* Data */,
 				26ADC44924AEEC560042ED8A /* Assets.xcassets */,
 				26ADC44E24AEEC560042ED8A /* Info.plist */,
 				26ADC44F24AEEC560042ED8A /* SwiftUI_Mac_11.entitlements */,
@@ -81,6 +78,25 @@
 				26ADC44C24AEEC560042ED8A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		26D1054324AEFAD400897038 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				26D1053B24AEF8F300897038 /* httpcodes.json */,
+				26D1053D24AEF8F300897038 /* HttpStatus.swift */,
+				26D1053C24AEF8F300897038 /* Helper.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		26D1054424AEFADC00897038 /* List-Detail */ = {
+			isa = PBXGroup;
+			children = (
+				26ADC44724AEEC550042ED8A /* ContentView.swift */,
+				26D1054124AEF93200897038 /* DetailView.swift */,
+			);
+			path = "List-Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

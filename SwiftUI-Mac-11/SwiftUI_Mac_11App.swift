@@ -9,13 +9,39 @@ import SwiftUI
 
 @main
 struct SwiftUI_Mac_11App: App {
+    @AppStorage("appTheme") var appTheme: String = "system"
+
     @SceneBuilder var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            CommandMenu("Theme") {
+                Button(action: {
+                    NSApp.appearance = NSAppearance(named: .darkAqua)
+                    appTheme = "dark"
+                }) {
+                    Label("Dark", systemImage: appTheme == "dark" ? "checkmark" : "")
+                }
 
-        Settings {
-            SettingsView()
+                Button(action: {
+                    NSApp.appearance = NSAppearance(named: .aqua)
+                    appTheme = "light"
+                }) {
+                    Label("Light", systemImage: appTheme == "light" ? "checkmark" : "")
+                }
+
+                Button(action: {
+                    NSApp.appearance = nil
+                    appTheme = "system"
+                }) {
+                    Label("System", systemImage: appTheme == "system" ? "checkmark" : "")
+                }
+            }
         }
+
+//        Settings {
+//            SettingsView()
+//        }
     }
 }

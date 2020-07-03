@@ -43,6 +43,8 @@ struct DetailView: View {
         .onAppear {
             self.getCatImage()
         }
+        .navigationTitle(httpStatus.title)
+
 //        .onReceive(flipImageMenuItemSelected) { _ in
 //            // DispatchQueue.main.async {
 //                self.imageIsFlipped.toggle()

@@ -21,21 +21,21 @@ struct SwiftUI_Mac_11App: App {
                     NSApp.appearance = NSAppearance(named: .darkAqua)
                     appTheme = "dark"
                 }) {
-                    Label("Dark", systemImage: appTheme == "dark" ? "checkmark" : "")
+                    Label("Dark", systemImage: "moon.stars")
                 }
 
                 Button(action: {
                     NSApp.appearance = NSAppearance(named: .aqua)
                     appTheme = "light"
                 }) {
-                    Label("Light", systemImage: appTheme == "light" ? "checkmark" : "")
+                    Label("Light", systemImage: "sun.max")
                 }
 
                 Button(action: {
                     NSApp.appearance = nil
                     appTheme = "system"
                 }) {
-                    Label("System", systemImage: appTheme == "system" ? "checkmark" : "")
+                    Label("System", systemImage: "desktopcomputer")
                 }
             }
         }

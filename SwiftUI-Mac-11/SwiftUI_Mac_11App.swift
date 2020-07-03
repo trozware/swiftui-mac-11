@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SwiftUI_Mac_11App: App {
-    var body: some Scene {
+    @SceneBuilder var body: some Scene {
         WindowGroup {
             ContentView()
+        }
+
+        Settings {
+            SettingsView()
         }
     }
 }

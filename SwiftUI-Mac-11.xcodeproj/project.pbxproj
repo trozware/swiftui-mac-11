@@ -15,6 +15,7 @@
 		26D1053F24AEF8F300897038 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D1053C24AEF8F300897038 /* Helper.swift */; };
 		26D1054024AEF8F300897038 /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D1053D24AEF8F300897038 /* HttpStatus.swift */; };
 		26D1054224AEF93200897038 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D1054124AEF93200897038 /* DetailView.swift */; };
+		26D1054624AF028F00897038 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D1054524AF028F00897038 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		26D1053C24AEF8F300897038 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		26D1053D24AEF8F300897038 /* HttpStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
 		26D1054124AEF93200897038 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		26D1054524AF028F00897038 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				26ADC44724AEEC550042ED8A /* ContentView.swift */,
 				26D1054124AEF93200897038 /* DetailView.swift */,
+				26D1054524AF028F00897038 /* SettingsView.swift */,
 			);
 			path = "List-Detail";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D1054624AF028F00897038 /* SettingsView.swift in Sources */,
 				26ADC44824AEEC550042ED8A /* ContentView.swift in Sources */,
 				26ADC44624AEEC550042ED8A /* SwiftUI_Mac_11App.swift in Sources */,
 				26D1053F24AEF8F300897038 /* Helper.swift in Sources */,

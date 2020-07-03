@@ -25,10 +25,12 @@ struct ContentView: View {
 
             Text("Select a category.")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+
         }
         .onAppear {
             self.readCodes()
         }
+
     }
 
     func readCodes() {

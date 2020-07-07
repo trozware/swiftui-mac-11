@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var httpSections: [HttpSection] = []
-    @State private var selection: Int? = nil
     @State private var showSamplesSheet = false
 
     @AppStorage("appTheme") var appTheme: String = "system"
@@ -20,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
+            List() {
                 ForEach(httpSections) { section in
                     NavigationLink(destination: StatusList(title: section.headerText,
                                                            statuses: section.statuses)) {
@@ -29,12 +28,10 @@ struct ContentView: View {
                 }
             }
             .listStyle(InsetListStyle())
-            .frame(minWidth: 150, idealWidth: 150, maxWidth: 250, maxHeight: .infinity)
+            .frame(minWidth: 150, idealWidth: 150, maxWidth: 250,
+                   minHeight: 400, maxHeight: .infinity)
 
-
-            Text("Select a category.")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-
+            StatusList(title: "", statuses: [])
         }
         .sheet(isPresented: $showSamplesSheet) {
             SamplesView(isVisible: $showSamplesSheet)
@@ -47,6 +44,23 @@ struct ContentView: View {
             showSamplesSheet.toggle()
         }
         .navigationTitle("HTTP Status Codes")
+        .toolbar {
+            ToolbarItem {
+                Button(action: {
+                    NotificationCenter.default.post(name: .flipImage, object: nil)
+                } ) {
+                    Image(systemName: "arrow.left.and.right.righttriangle.left.righttriangle.right")
+                }
+            }
+
+            ToolbarItem {
+                Button(action: {
+                    showSamplesSheet.toggle()
+                } ) {
+                    Image(systemName: "uiwindow.split.2x1")
+                }
+            }
+        }
     }
 
     func readCodes() {
@@ -79,7 +93,7 @@ struct StatusList: View {
         NavigationView {
             List {
                 ForEach(statuses) { status in
-                    NavigationLink(destination: DetailView(httpStatus: status)) {
+                    NavigationLink(destination: DetailView(sectionTitle: title, httpStatus: status)) {
                         ListRowView(code: status.code, title: status.title)
                     }
                 }
@@ -87,7 +101,7 @@ struct StatusList: View {
             .listStyle(InsetListStyle())
             .frame(minWidth: 200, idealWidth: 200, maxWidth: 350, maxHeight: .infinity)
 
-            Text("Select an HTTP status.")
+            Text(statuses.isEmpty ? "Select a category." : "Select an HTTP status.")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .navigationTitle(title)

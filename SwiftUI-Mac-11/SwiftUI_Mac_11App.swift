@@ -16,7 +16,7 @@ struct SwiftUI_Mac_11App: App {
             ContentView()
         }
         .commands {
-            CommandMenu("Theme") {
+            CommandGroup(after: .windowArrangement) {
                 Button(action: {
                     NSApp.appearance = NSAppearance(named: .darkAqua)
                     appTheme = "dark"
@@ -71,7 +71,9 @@ extension Notification.Name {
 struct MenuButtonStyling: ViewModifier {
     func body(content: Content) -> some View {
         content
+            .foregroundColor(.primary)
             .padding(.bottom, 2)
             .padding(.top, 1)
     }
 }
+

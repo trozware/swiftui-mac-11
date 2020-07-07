@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    let sectionTitle: String
     let httpStatus: HttpStatus
     
     @State private var catImage: NSImage?
@@ -33,8 +34,7 @@ struct DetailView: View {
                 CatImageView(catImage: catImage, imageIsFlipped: imageIsFlipped)
             } else {
                 Spacer()
-                Text("Loading...")
-                    .font(.headline)
+                ProgressView()
             }
             Spacer()
             DialogsView()
@@ -43,8 +43,7 @@ struct DetailView: View {
         .onAppear {
             getCatImage()
         }
-        .navigationTitle(httpStatus.title)
-
+        .navigationTitle("\(sectionTitle) - \(httpStatus.title)")
         .onReceive(flipImageMenuItemSelected) { _ in
             imageIsFlipped.toggle()
         }
@@ -78,7 +77,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(httpStatus: HttpStatus(code: "404", title: "Not Found"))
+        DetailView(sectionTitle: "4xx", httpStatus: HttpStatus(code: "404", title: "Not Found"))
     }
 }
 

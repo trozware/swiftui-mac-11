@@ -49,7 +49,7 @@ struct DetailView: View {
         }
         .onReceive(saveImageUrlSelected) { publisher in
             if let saveUrl = publisher.object as? URL,
-                let imageData = catImage?.tiffRepresentation {
+               let imageData = catImage?.tiffRepresentation {
                 if let imageRep = NSBitmapImageRep(data: imageData) {
                     if let saveData = imageRep.representation(using: .jpeg, properties: [:]) {
                         try? saveData.write(to: saveUrl)

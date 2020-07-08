@@ -60,6 +60,7 @@ struct SwiftUI_Mac_11App: App {
             SettingsView()
         }
     }
+
 }
 
 extension Notification.Name {

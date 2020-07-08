@@ -44,23 +44,7 @@ struct ContentView: View {
             showSamplesSheet.toggle()
         }
         .navigationTitle("HTTP Status Codes")
-        .toolbar {
-            ToolbarItem {
-                Button(action: {
-                    NotificationCenter.default.post(name: .flipImage, object: nil)
-                } ) {
-                    Image(systemName: "arrow.left.and.right.righttriangle.left.righttriangle.right")
-                }
-            }
-
-            ToolbarItem {
-                Button(action: {
-                    showSamplesSheet.toggle()
-                } ) {
-                    Image(systemName: "uiwindow.split.2x1")
-                }
-            }
-        }
+        .modifier(ToolbarModifier())
     }
 
     func readCodes() {
@@ -117,11 +101,34 @@ struct ListRowView: View {
             Text(code)
                 .font(.largeTitle)
                 .foregroundColor(.primary)
-                
+
             Text(title)
                 .font(.title2)
                 .truncationMode(.tail)
         }
         .padding(.vertical)
+    }
+}
+
+struct ToolbarModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        NotificationCenter.default.post(name: .flipImage, object: nil)
+                    } ) {
+                        Image(systemName: "arrow.left.and.right.righttriangle.left.righttriangle.right")
+                    }
+                }
+
+                ToolbarItem {
+                    Button(action: {
+                        NotificationCenter.default.post(name: .showSamples, object: nil)
+                    } ) {
+                        Image(systemName: "uiwindow.split.2x1")
+                    }
+                }
+            }
     }
 }

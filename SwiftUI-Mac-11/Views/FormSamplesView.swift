@@ -15,7 +15,7 @@ struct FormSamplesView: View {
     @State private var selectedTime = Date()
     @State private var selectedColor = Color.blue
 
-    // TODO: Focus in text field - not working yet
+    // TODO: Focus in text field
     
     var body: some View {
         VStack(spacing: 30) {

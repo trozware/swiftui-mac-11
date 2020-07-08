@@ -35,7 +35,7 @@ struct SwitchSamplesView: View {
                    in: 0 ... 10,
                    minimumValueLabel: Text("Slow"),
                    maximumValueLabel: Text("Fast")) {
-                    Text("Speed:")
+                Text("Speed:")
             }
             .padding()
             
@@ -48,7 +48,7 @@ struct SwitchSamplesView: View {
             }
             .modifier(ExplanatoryText())
         }
-            
+
         .padding()
     }
 }
